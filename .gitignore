@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+examples/raw_report.txt
+artifacts/
+
+# OS 依存ファイル
+.DS_Store
+Thumbs.db
+
+# 仮想環境
+.venv/
