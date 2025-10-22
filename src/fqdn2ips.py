@@ -68,31 +68,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    import argparse
-
-    parser = argparse.ArgumentParser(description="Resolve FQDN to IP addresses (A/AAAA)")
-    parser.add_argument("--fqdn", help="Target FQDN (e.g. www.example.com)")
-    args = parser.parse_args()
-
-    if args.fqdn:
-        ips = resolve_fqdn_to_ip(args.fqdn)
-        if ips:
-            print("\n".join(ips))
-        else:
-            print("IPアドレスが見つかりませんでした")
-    else:
-        # 対話式（従来どおり）
-        try:
-            while True:
-                fqdn = input("FQDNを入力してください (終了は 'quit'): ").strip()
-                if fqdn.lower() == "quit":
-                    break
-                if not fqdn:
-                    continue
-                ips = resolve_fqdn_to_ip(fqdn)
-                if ips:
-                    print("\n".join(ips))
-                else:
-                    print("IPアドレスが見つかりませんでした")
-        except (KeyboardInterrupt, EOFError):
-            pass
+    main()
